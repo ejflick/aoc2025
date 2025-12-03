@@ -1,22 +1,16 @@
-# This doesn't compute the correct answer.
+turns := File with("inputs/day1") do(
+    openForReading
+) readLines map(
+    asMutable replaceSeq("L", "-") replaceSeq("R", "") asNumber
+) atInsert(0, 50)
 
-Number sign := method(
-    if(self < 0, -1, 1)
+dial := 0
+passedZero := 0
+turns foreach(turn,
+    sign := if(turn > 0, 1, -1)
+    for(click, sign, turn, sign,
+        if((dial = (dial + sign) % 100) == 0, passedZero = passedZero + 1)
+    )
 )
 
-dial := 50
-File with("inputs/day1_test_2") do(openForReading) readLines map(
-    asMutable replaceSeq("L", "-") replaceSeq("R", "") asNumber
-) reduce(
-    passedZero, turns,
-    dial = dial + turns
-    if(dial < 0 or dial > 99) then(
-        correction := (dial sign) * 100
-        while(dial < 0 or dial > 99,
-            dial = dial - correction
-            passedZero = passedZero + 1
-        )
-    )
-    passedZero
-    , 0
-) println
+passedZero println

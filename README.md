@@ -9,7 +9,7 @@ In this repository are solutions to Advent of Code 2025. I'm attempting in two l
 |Day|Io|Racket|
 |---|---|---|
 |1-1|X|X|
-|1-2| | |
+|1-2|X| |
 |2-1| |X|
 |2-2| |X|
 |3-1|X| |
