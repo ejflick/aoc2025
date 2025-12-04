@@ -47,6 +47,6 @@
 (define part1-answer
   (for/sum ([y (range 0 (vector-length cells))])
     (for/sum ([x (range 0 (vector-length (vector-ref cells y)))])
-      (if (and (char=? (cell-at x y) #\@) (< (adjacent-rolls x y) 4))
+      (if (and (is-roll? (cell-at x y)) (< (adjacent-rolls x y) 4))
           1
           0))))
