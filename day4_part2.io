@@ -1,3 +1,5 @@
+/* This solution is extremely unoptimized. I'll fix it eventually by using tabulation when creating a new Board */
+
 Empty := Object clone
 Roll := Object clone
 
