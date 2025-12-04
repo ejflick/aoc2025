@@ -14,7 +14,7 @@ In this repository are solutions to Advent of Code 2025. I'm attempting in two l
 |2-2| |X|
 |3-1|X| |
 |3-2|X| |
-|4-1||
+|4-1||X|
 |4-2||
 |5-1||
 |5-2||
